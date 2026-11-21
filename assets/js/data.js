@@ -31,12 +31,17 @@ window.PRODUCTS = [
 ];
 
 window.GALLERY = [
-  { img: U("1521412644187-c49fa049e84d", 900),  alt: "Sports field",         emoji: "🏟️", cls: "tall" },
-  { img: U("1593766827228-8737b6cd1472", 700),  alt: "Cricket equipment",    emoji: "🏏", cls: "" },
-  { img: U("1626224583764-f87db24ac4ea", 700),  alt: "Badminton equipment",  emoji: "🏸", cls: "" },
-  { img: U("1546519638-68e109498ffc", 1100),    alt: "Basketball court",     emoji: "🏀", cls: "wide" },
-  { img: U("1579952363873-27f3bade9f55", 700),  alt: "Football",             emoji: "⚽", cls: "" },
-  { img: U("1517836357463-d25dfeac3438", 700),  alt: "Fitness gear",         emoji: "💪", cls: "tall" },
-  { img: U("1586165368502-1bad197a6461", 700),  alt: "Chess board",          emoji: "♟️", cls: "" },
-  { img: U("1611251135345-18c56206b863", 700),  alt: "Table tennis",         emoji: "🏓", cls: "" }
+  // cls: "big" = bada (2x2) · "wide" = chaudi · "tall" = lambi · "" = normal
+  // pos (optional): photo ka kaunsa hissa dikhe, jaise "center top"
+  // Tip: grid poora bhare isliye 2 "big" + 2 "wide" + 6 "tall" ka mix rakha hai.
+  { img: "assets/images/gallery/shop-front.jpg",         alt: "Hamari dukaan — counter aur shelves",   emoji: "🏪", cls: "big" },
+  { img: "assets/images/gallery/cricket-kit-bags.jpg",   alt: "Cricket kit bags aur football",         emoji: "🎒", cls: "wide" },
+  { img: "assets/images/gallery/badminton-rackets.jpg",  alt: "Badminton rackets",                     emoji: "🏸", cls: "wide" },
+  { img: "assets/images/gallery/shopkeeper-counter.jpg", alt: "Hindustan Khel Ghar counter",           emoji: "🏬", cls: "big", pos: "center 30%" },
+  { img: "assets/images/gallery/trophies-counter.jpg",   alt: "Trophies aur cricket bats",             emoji: "🏆", cls: "tall" },
+  { img: "assets/images/gallery/cricket-bats.jpg",       alt: "Cricket bats ka collection",            emoji: "🏏", cls: "tall" },
+  { img: "assets/images/gallery/sports-shoes.jpg",       alt: "Sports shoes",                          emoji: "👟", cls: "tall" },
+  { img: "assets/images/gallery/trophies.jpg",           alt: "Trophies aur awards",                   emoji: "🏆", cls: "tall" },
+  { img: "assets/images/gallery/shop-interior.jpg",      alt: "Store ka andar ka nazara",              emoji: "🏪", cls: "tall" },
+  { img: "assets/images/gallery/shop-ceiling.jpg",       alt: "Store interior aur shelves",            emoji: "✨", cls: "tall" }
 ];

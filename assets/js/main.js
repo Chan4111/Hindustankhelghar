@@ -87,18 +87,19 @@
   }, { passive: true });
 
   /* ---------- reusable renderers ---------- */
-  const FALLBACK = (img) => { img.onerror = () => img.remove(); };
+  // Local paths ("assets/...") ko page ke hisab se sahi bana deta hai; http links jaise the waise rehte hain
+  const SRC = (u) => (/^(https?:)?\/\/|^data:/.test(u) ? u : ROOT + u.replace(/^\.?\//, ""));
 
   function categoryCard(c, hrefBase) {
     return `<a class="category-card reveal" href="${hrefBase}?cat=${encodeURIComponent(c.name)}">
       <span class="emoji-bg">${c.emoji}</span>
-      <img src="${c.img}" alt="${c.name}" loading="lazy" onerror="this.remove()">
+      <img src="${SRC(c.img)}" alt="${c.name}" loading="lazy" onerror="this.remove()">
       <div class="category-info"><small>${c.sub}</small><h3>${c.name}</h3><span class="go">→</span></div></a>`;
   }
   function productCard(p) {
     return `<article class="product-card reveal" data-category="${p.cat}">
       <div class="product-image"><span class="emoji-bg">${p.emoji}</span>
-        <img src="${p.img}" alt="${p.name}" loading="lazy" onerror="this.remove()">
+        <img src="${SRC(p.img)}" alt="${p.name}" loading="lazy" onerror="this.remove()">
         <span class="product-badge">${p.badge}</span></div>
       <div class="product-body"><small>${p.cat}</small><h3>${p.name}</h3><p>${p.desc}</p>
         <div class="product-foot"><span>Price on enquiry</span><button class="mini-btn" data-product="${p.name}">Enquire ↗</button></div></div>
@@ -130,8 +131,8 @@
 
   const galHost = document.getElementById("galleryGrid");
   if (galHost) {
-    galHost.innerHTML = window.GALLERY.map(g => `<div class="g-item ${g.cls} reveal" data-full="${g.img}">
-      <span class="emoji-bg">${g.emoji}</span><img src="${g.img}" alt="${g.alt}" loading="lazy" onerror="this.remove()"></div>`).join("");
+    galHost.innerHTML = window.GALLERY.map(g => `<div class="g-item ${g.cls} reveal" data-full="${SRC(g.img)}">
+      <span class="emoji-bg">${g.emoji}</span><img src="${SRC(g.img)}" alt="${g.alt}" style="object-position:${g.pos||"center"}" loading="lazy" onerror="this.remove()"></div>`).join("");
     const lb = document.getElementById("lightbox"), lbImg = lb.querySelector("img");
     galHost.addEventListener("click", e => {
       const it = e.target.closest(".g-item"); if (!it || !it.querySelector("img")) return;
