@@ -10,7 +10,8 @@ window.STORE = {
   hours: "Daily: 8:00 AM – 9:00 PM",
   // Google Maps ka exact share link mile to yahan daal dena (optional).
   // Khali chhodoge to Benipur search wala link use hoga.
-  mapUrl: ""
+  mapUrl: "",
+  instagram: "https://www.instagram.com/hindustankhelgharbenipur"
 };
 window.STORE.mapSearch =
   "https://www.google.com/maps/search/?api=1&query=" +

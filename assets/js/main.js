@@ -49,6 +49,7 @@
         <div class="footer-contact"><h4>Connect</h4>
           <a href="tel:+${S.phoneIntl}">📞 ${S.phoneDisplay}</a>
           <a href="#" data-wa="Hello, I found you through your website.">💬 WhatsApp</a>
+          <a href="${S.instagram}" target="_blank" rel="noopener">📸 Instagram</a>
           <a href="${S.mapUrl || S.mapSearch}" target="_blank" rel="noopener">📍 Store Location</a>
           <span>${S.address}</span>
         </div>
@@ -71,6 +72,7 @@
     const prod = e.target.closest("[data-product]");
     if (prod) wa("Hello " + S.name + ", I want to enquire about " + prod.dataset.product + ". Please share price and availability.");
   });
+  document.querySelectorAll("[data-insta]").forEach(a => { a.href = S.instagram; a.target = "_blank"; a.rel = "noopener"; });
   document.querySelectorAll("[data-map]").forEach(a => { a.href = S.mapUrl || S.mapSearch; a.target = "_blank"; a.rel = "noopener"; });
 
   /* ---------- menu / scroll ---------- */
