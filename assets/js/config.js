@@ -7,7 +7,7 @@ window.STORE = {
   phoneIntl: "919798270596",          // WhatsApp / call ke liye (country code ke saath)
   phoneDisplay: "+91 97982 70596",
   address: "Benipur, Darbhanga, Bihar – 847103",
-  hours: "Please call to confirm timings",
+  hours: "Daily: 8:00 AM – 9:00 PM",
   // Google Maps ka exact share link mile to yahan daal dena (optional).
   // Khali chhodoge to Benipur search wala link use hoga.
   mapUrl: ""
